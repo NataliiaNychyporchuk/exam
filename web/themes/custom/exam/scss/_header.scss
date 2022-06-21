@@ -1,0 +1,183 @@
+@import "../scss/variables";
+
+.header {
+    padding-top: 20px;
+    background-image: url(../img/header.png);
+    background-color: $moonmist;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 40px;
+        min-height: 700px;
+    }
+}
+
+#block-exam-main-menu {
+    margin-left: 10px;
+    margin-top: 14px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-branding-block {
+    background-color: $blackmarlin;
+    padding: 25px 32px;
+
+    .site-branding__name {
+        font-size: 32px;
+        color: $blue;
+    }
+
+    .site-branding__slogan {
+        font-size: 14px;
+        color: $grey;
+    }
+}
+
+.region-header {
+    padding: 0;
+    position: relative;
+    background-color: $white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1250px;
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+
+        li {
+            padding: 0 10px;
+            position: relative;
+
+            &:first-child {
+                content: '';
+                background: url('../img/Homepage-menu.png');
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 0;
+                margin: 0;
+
+                a {
+                    color: transparent;
+
+                    &:hover:after {
+                        display: block;
+                        left: 10px;
+                        right: 10px;
+                        position: absolute;
+                        content: "";
+                        height: 7px;
+                        top: 65px;
+                        width: 40%;
+                        margin: 0 auto;
+                        background-color: #6e9bca;
+                    }
+                }
+            }
+
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 14px;
+                color: $blackmarlin;
+
+                &:hover:after {
+                    left: 10px;
+                    right: 10px;
+                    position: absolute;
+                    content: "";
+                    height: 7px;
+                    top: 65px;
+                    width: 75%;
+                    margin: 0;
+                    background: $blue;
+                }
+            }
+        }
+    }
+}
+
+.block-addtoany-block {
+    display: flex;
+    align-items: center;
+
+}
+
+.search-block-form {
+    display: flex;
+    align-items: center;
+
+    fieldset {
+        border: none;
+    }
+
+    #edit-keys {
+        padding: 6px 0px 11px 5px;
+        border: 1px #cdcdcd solid;
+    }
+
+    .form-row > fieldset,
+    .form-row > div {
+        padding: 0;
+        flex: 0 1 auto;
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    #edit-actions {
+        input {
+            border: 1px #cdcdcd solid;
+        }
+
+        #edit-submit {
+            border-radius: 0;
+            background: none;
+            color: transparent;
+            background: url(../img/search.png);
+            background-size: 22px 22px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            height: 43px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.block-views-blockcreativity-header-block-1 {
+    position: absolute;
+    margin-top: -405px;
+    width: 66%;
+    text-align: center;
+
+    .views-row {
+        .views-field-title {
+            font-size: 65px;
+            color: $white;
+            line-height: 61px;
+            font-weight: lighter;
+        }
+
+        .views-field-subtitle {
+            font-size: 36px;
+            line-height: 39px;
+            letter-spacing: 1.4px;
+            color: $blackmarlin;
+        }
+
+        .views-field-description-header {
+            color: $blue;
+            padding-left: 37%;
+            text-align: left;
+            font-size: 14px;
+        }
+    }
+}

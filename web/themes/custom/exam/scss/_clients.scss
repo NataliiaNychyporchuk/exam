@@ -1,0 +1,37 @@
+@import "../scss/variables";
+
+.block-views-blockall-clients-block-1 {
+    h2 {
+        line-height: 59px;
+        font-size: 31px;
+        margin: 40px auto;
+
+        &:before,
+        &:after {
+            background-color: $grey;
+            content: ' ';
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            width: 44%;
+        }
+    }
+
+    #slick-views-all-clients-block-block-1-1-slider {
+        max-width: 1250px;
+        margin: 0 auto;
+
+        .slick-list {
+            margin-bottom: $gutterXL;
+        }
+    }
+
+    .slick-arrow {
+        top: 15px;
+
+        &:before {
+            color: $blackmarlin;
+        }
+    }
+}

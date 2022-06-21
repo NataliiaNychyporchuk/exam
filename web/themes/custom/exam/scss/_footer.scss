@@ -1,0 +1,21 @@
+@import "../scss/variables";
+
+.site-footer {
+    background-color: $blackmarlin;
+
+    .region-footer-first {
+        max-width: 1250px;
+        padding: 20px 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        .site-branding-block {
+            padding: 28px 36px 28px 0;
+        }
+
+        #block-addtoanybuttons-2 {
+            margin-right: 5px;
+        }
+    }
+}

@@ -1,0 +1,237 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.block-views-blockall-news-block-1 {
+    .form-row {
+        display: flex;
+        margin-top: 16px;
+        background: $white;
+        width: 490px;
+
+        fieldset {
+            border: none;
+        }
+
+        input {
+            text-transform: uppercase;
+        }
+
+        .form-actions {
+            align-self: center;
+        }
+
+        .node--view-mode-teaser {
+            border-bottom: none;
+            margin: 0;
+        }
+
+        .form-control {
+            padding: 5px 15px 5px 15px;
+        }
+
+        #edit-actions--2 {
+            #edit-submit-all-news {
+                text-transform: uppercase;
+                background-color: $lightblue;
+                color: $white;
+            }
+        }
+    }
+
+    .view-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1250px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .view-filters {
+        max-width: 1250px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .layout__region--second {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        margin-bottom: 10px;
+    }
+
+    .layout--twocol-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .layout__region--first {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card {
+        .row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        &-body {
+            border-left: 2px solid #DCDFCB;
+            margin-left: -116px;
+        }
+    }
+
+    .content {
+        background: repeating-linear-gradient(-45deg, #DCDFCB, #DCDFCB 10%, transparent 10%, transparent 50%);
+        background-size: 8px 8px;
+        margin: 0;
+        max-width: 100%;
+        padding: 1px 0 80px;
+    }
+
+    h2 {
+        line-height: 59px;
+        font-size: 31px;
+        text-transform: uppercase;
+        color: #373645;
+        font-weight: 700;
+        margin: 100px auto 16px;
+
+        &:before,
+        &:after {
+            background-color: #DCDFCB;
+            content: ' ';
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            width: 46%;
+        }
+    }
+
+
+    .views-row {
+
+        .node--view-mode-teaser .node__content {
+            clear: none;
+            font-size: 1em;
+            line-height: 1.6;
+            background-color: $white;
+            margin-right: 10px;
+
+            .content {
+                background: none;
+                padding: 0;
+            }
+        }
+
+        .node--view-mode-teaser {
+            border-bottom: none;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+    }
+
+    .field--name-field-date-publication {
+        color: $blue;
+        font-size: 45px;
+        line-height: 33px;
+        font-weight: bolder;
+        padding: 0 0 0 15px;
+        border-right: 2px solid #DCDFCB;
+        width: 115px;
+    }
+
+    .field--name-field-month-publication {
+        color: black;
+        font-size: 25px;
+        font-weight: 300;
+        padding: 0 0 0 15px;
+        border-right: 2px solid #DCDFCB;
+        width: 115px;
+    }
+
+    .field--name-field-year-publication {
+        color: $moonmist;
+        font-size: 14px;
+        padding: 0 0 0 15px;
+        border-right: 2px solid #DCDFCB;
+        width: 115px;
+    }
+
+    .field--name-field-news__title {
+        font-size: 25px;
+        line-height: 37px;
+        border-left: 2px solid #DCDFCB;
+    }
+
+    .field--name-field-news-author {
+        display: flex;
+        font-size: 14px;
+        color: black;
+
+        &:after {
+            content: '/';
+            display: inline-block;
+            height: 1px;
+        }
+
+        .field__label {
+            margin-right: 5px;
+            color: $grey;
+        }
+    }
+
+    .field--name-field-date {
+        font-size: 13px;
+        color: $grey;
+        position: absolute;
+        top: 12px;
+        right: 25px;
+    }
+
+    .field--name-field-news-category {
+        font-size: 14px;
+        color: $blue;
+    }
+
+    .field--name-field-news-read-more {
+        text-align: center;
+        height: 29px;
+        line-height: 29px;
+        font-size: 14px;
+        width: 100px;
+        margin: 10px 74%;
+        background-color: $blackmarlin;
+
+        a {
+            color: $white;
+        }
+    }
+
+    .field--name-body field--type-text-with-summary {
+        font-size: 14px;
+        line-height: 16px;
+        margin-left: 15px;
+    }
+
+#edit-submit-all-news {
+    border-radius: 5px;
+    padding: 4px 19px 8px 15px;
+    background-color: $lightblue;
+    border-color: $lightblue;
+
+    &:active {
+        background-color: $blackmarlin;
+        color: $white;
+    }
+}
+}

@@ -1,0 +1,11 @@
+@import "../scss/variables";
+
+@mixin link_button {
+    a {
+        padding: 7px 8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 14px;
+    }
+}
