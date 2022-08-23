@@ -5,17 +5,40 @@
 
     .region-footer-first {
         max-width: 1250px;
-        padding: 20px 0;
+        padding: 35px 0;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
 
+        @include media-breakpoint-down(lg) {
+            padding: $gutterS 0;
+        }
+
         .site-branding-block {
             padding: 28px 36px 28px 0;
+
+            @include media-breakpoint-down(xl) {
+                padding-left: 5px;
+            }
+
+            .site-branding__name {
+                font-size: 32px;
+                color: $blue;
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 27px;
+                }
+            }
+
+            .site-branding__slogan {
+                font-size: 14px;
+                color: $grey;
+            }
         }
 
         #block-addtoanybuttons-2 {
             margin-right: 5px;
+            margin-top: $gutterXL;
         }
     }
 }

@@ -50,8 +50,13 @@ h2 {
 
 .node--view-mode-teaser {
     border-bottom: none;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 }
 
 a {
@@ -69,7 +74,6 @@ ul {
 
 .content,
 view-content {
-    max-width: 1250px;
     margin: 0 auto;
 }
 
@@ -112,48 +116,91 @@ html .ui-button.ui-state-disabled:active {
     background: none;
 }
 
-.js-pager__items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+.pagerer-container {
+    margin-top: $gutterXS;
 
-    .pager__item {
-        margin-right: 26px;
+    .js-pager__items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+
+        .pager__item {
+            margin-right: 26px;
+            @include media-breakpoint-down(md) margin-right: 0;
+        }
     }
 }
 
 .node--view-mode-full {
     .node__content {
-        max-width: 1250px;
-        margin: 50px auto;
+        margin: $gutterXL auto;
 
-        p {
-            text-align: justify;
+        @include media-breakpoint-down(md) {
+            margin: $gutterS auto;
+        }
+
+        .field--type-text-with-summary {
+            p {
+                text-align: justify;
+            }
+        }
+
+        .field--name-field-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: $blackmarlin;
+            font-size: 26px;
+            font-weight: 700;
+
+            &:after {
+                display: block;
+                content: '';
+                width: 55px;
+                position: relative;
+                height: 4px;
+                background-color: $grey;
+                margin: 0 auto;
+                transform: translate(0px, 10px);
+            }
         }
     }
 }
 
 .node-view-mode-title {
     max-width: 1250px;
-    margin: 50px auto;
+    margin: $gutterXL auto;
+    padding: 0 $gutterXS;
+
+    @include media-breakpoint-down(md) {
+        margin: $gutterS auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
 }
 
 .view-search-content {
     max-width: 1250px;
-    margin: 50px auto;
+    margin: $gutterXL auto;
+    padding: 0 10px;
+
+    @include media-breakpoint-down(md) {
+        margin: $gutterS auto;
+    }
 
     .view-header {
-        margin-bottom: 20px;
+        margin-bottom: $gutterS;
     }
 
     .form-row {
         display: flex;
-        margin-bottom: 30px;
+        margin-bottom: $gutterM;
 
         label {
-            margin-right: 10px;
+            margin-right: $gutterXS;
         }
 
         fieldset {
@@ -175,7 +222,7 @@ html .ui-button.ui-state-disabled:active {
             background-repeat: no-repeat;
             background-position: center;
             width: 40px;
-            height: 35px;
+            height: 43px;
             margin-left: -10px;
         }
     }
@@ -186,7 +233,7 @@ html .ui-button.ui-state-disabled:active {
 
     .node__content {
         .field--name-body {
-            margin-bottom: 20px;
+            margin-bottom: $gutterS;
         }
     }
 }
@@ -202,22 +249,27 @@ html .ui-button.ui-state-disabled:active {
     align-items: center;
 }
 
-.title {
-    text-align: center;
-    text-transform: uppercase;
-    color: $blackmarlin;
-    margin: 50px 0 60px;
-    font-size: 26px;
-    font-weight: 700;
+input {
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
 
-    &:after {
-        display: block;
-        content: '';
-        width: 55px;
-        position: relative;
-        height: 4px;
-        background-color: $grey;
-        margin: 0 auto;
-        transform: translate(0px, 10px);
+.node__content {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.news-page {
+    max-width: 1250px;
+    margin: $gutterXL auto;
+    padding: 0 $gutterXS;
+
+    @include media-breakpoint-down(md) {
+        margin: $gutterS auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
     }
 }

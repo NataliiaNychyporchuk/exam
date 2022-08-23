@@ -2,38 +2,68 @@
 @import "../scss/mixins";
 
 .block-views-blockall-news-block-1 {
-    .form-row {
-        display: flex;
-        margin-top: 16px;
-        background: $white;
-        width: 490px;
+    &:before {
+        width: 100%;
+        background-color: $moonmist;
+        content: ' ';
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        top: 141px;
+        left: 0;
+        z-index: -1;
 
-        fieldset {
-            border: none;
+        @include media-breakpoint-down(md) {
+            top: 62px;
+        }
+    }
+
+    #views-exposed-form-all-news-block-1 {
+        margin-bottom: -35px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 0;
         }
 
-        input {
-            text-transform: uppercase;
-        }
+        .form-row {
+            display: flex;
+            margin-top: 16px;
+            background: $white;
+            width: 490px;
 
-        .form-actions {
-            align-self: center;
-        }
+            @include media-breakpoint-down(sm) {
+                width: 320px;
+            }
 
-        .node--view-mode-teaser {
-            border-bottom: none;
-            margin: 0;
-        }
+            fieldset {
+                border: none;
+                padding: 0;
+            }
 
-        .form-control {
-            padding: 5px 15px 5px 15px;
-        }
-
-        #edit-actions--2 {
-            #edit-submit-all-news {
+            input {
                 text-transform: uppercase;
-                background-color: $lightblue;
-                color: $white;
+            }
+
+            .form-actions {
+                align-self: center;
+            }
+
+            .node--view-mode-teaser {
+                border-bottom: none;
+                margin: 0;
+            }
+
+            .form-control {
+                padding: 5px 15px 5px 15px;
+            }
+
+            #edit-actions {
+                #edit-submit-all-news {
+                    background-color: $lightblue;
+                    color: $white;
+                    text-transform: inherit;
+                }
             }
         }
     }
@@ -44,6 +74,7 @@
         max-width: 1250px;
         width: 100%;
         margin: 0 auto;
+        column-gap: 20px;
 
         @include media-breakpoint-down(lg) {
             grid-template-columns: 1fr;
@@ -57,35 +88,26 @@
     }
 
     .layout__region--second {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr 1fr;
-        margin-bottom: 10px;
+        text-transform: uppercase;
+        margin-top: 12px;
+
+        @include media-breakpoint-down(md) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .layout--twocol-section {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: $gutterS;
     }
 
     .layout__region--first {
         display: flex;
         align-items: center;
         flex-direction: column;
-    }
-
-    .card {
-        .row {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 10px;
-        }
-
-        &-body {
-            border-left: 2px solid #DCDFCB;
-            margin-left: -116px;
-        }
+        margin-top: 4px;
     }
 
     .content {
@@ -93,7 +115,7 @@
         background-size: 8px 8px;
         margin: 0;
         max-width: 100%;
-        padding: 1px 0 80px;
+        padding: 1px 0 15px;
     }
 
     h2 {
@@ -103,16 +125,12 @@
         color: #373645;
         font-weight: 700;
         margin: 100px auto 16px;
+        width: 135px;
+        background-color: $white;
 
-        &:before,
-        &:after {
-            background-color: #DCDFCB;
-            content: ' ';
-            display: inline-block;
-            height: 1px;
-            position: relative;
-            vertical-align: middle;
-            width: 46%;
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+            margin: $gutterS auto $gutterXS;
         }
     }
 
@@ -124,7 +142,7 @@
             font-size: 1em;
             line-height: 1.6;
             background-color: $white;
-            margin-right: 10px;
+            margin-right: $gutterXS;
 
             .content {
                 background: none;
@@ -145,93 +163,176 @@
         font-size: 45px;
         line-height: 33px;
         font-weight: bolder;
-        padding: 0 0 0 15px;
-        border-right: 2px solid #DCDFCB;
-        width: 115px;
+        width: 110px;
     }
 
     .field--name-field-month-publication {
         color: black;
         font-size: 25px;
-        font-weight: 300;
-        padding: 0 0 0 15px;
-        border-right: 2px solid #DCDFCB;
-        width: 115px;
+        font-weight: 350;
+        width: 110px;
+        text-transform: uppercase;
+
     }
 
     .field--name-field-year-publication {
         color: $moonmist;
         font-size: 14px;
-        padding: 0 0 0 15px;
-        border-right: 2px solid #DCDFCB;
-        width: 115px;
+        width: 92px;
     }
 
-    .field--name-field-news__title {
-        font-size: 25px;
-        line-height: 37px;
-        border-left: 2px solid #DCDFCB;
-    }
+    .block-field-blocknodenewsfield-news__title {
+        grid-column-start: 1;
+        grid-column-end: 5;
 
-    .field--name-field-news-author {
-        display: flex;
-        font-size: 14px;
-        color: black;
+        .field--name-field-news__title {
+            font-size: 25px;
+            line-height: 37px;
+            padding-left: 21px;
+            margin-left: -65px;
+            border-left: 2px solid #DCDFCB;
 
-        &:after {
-            content: '/';
-            display: inline-block;
-            height: 1px;
+            @include media-breakpoint-down(md) {
+                margin-left: 0;
+                padding-left: 5px;
+                font-size: 21px;
+            }
         }
+    }
 
-        .field__label {
-            margin-right: 5px;
+    .block-field-blocknodenewsfield-news-author {
+        display: inline-block;
+
+        .field--name-field-news-author {
+            display: flex;
+            font-size: 11px;
+            color: black;
+
+            &:after {
+                content: '/';
+                display: inline-block;
+                height: 1px;
+            }
+
+            .field__label {
+                margin-right: 5px;
+                color: $grey;
+            }
+        }
+    }
+
+    .block-field-blocknodenewsfield-date {
+        display: inline-block;
+        float: right;
+        margin-top: 6px;
+
+        .field--name-field-date {
+            font-size: 11px;
             color: $grey;
         }
     }
 
-    .field--name-field-date {
-        font-size: 13px;
-        color: $grey;
-        position: absolute;
-        top: 12px;
-        right: 25px;
-    }
+    .block-field-blocknodenewsfield-news-category {
+        display: inline-block;
 
-    .field--name-field-news-category {
-        font-size: 14px;
-        color: $blue;
-    }
-
-    .field--name-field-news-read-more {
-        text-align: center;
-        height: 29px;
-        line-height: 29px;
-        font-size: 14px;
-        width: 100px;
-        margin: 10px 74%;
-        background-color: $blackmarlin;
-
-        a {
-            color: $white;
+        .field--name-field-news-category {
+            font-size: 11px;
+            color: $blue;
         }
     }
 
-    .field--name-body field--type-text-with-summary {
-        font-size: 14px;
-        line-height: 16px;
-        margin-left: 15px;
+    .block-field-blocknodenewsfield-news-read-more {
+        margin-top: -10px;
+        padding-left: 21px;
+        margin-left: -65px;
+        border-left: 2px solid #DCDFCB;
+
+        @include media-breakpoint-down(md) {
+            margin-left: 0;
+            padding-left: 0px;
+        }
+
+        .field--name-field-news-read-more {
+            text-align: center;
+            height: 29px;
+            line-height: 29px;
+            font-size: 14px;
+            width: 100px;
+            margin: $gutterXS 76% 0;
+            background-color: $blackmarlin;
+
+            @include media-breakpoint-down(xl) {
+                margin: $gutterXS 72% 0;
+            }
+
+            @include media-breakpoint-down(lg) {
+                margin: $gutterXS 81% 0;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin: $gutterXS 65% 0;
+            }
+
+            a {
+                color: $white;
+            }
+        }
     }
 
-#edit-submit-all-news {
-    border-radius: 5px;
-    padding: 4px 19px 8px 15px;
-    background-color: $lightblue;
-    border-color: $lightblue;
+    .block-field-blocknodenewsfield-text-media {
 
-    &:active {
-        background-color: $blackmarlin;
-        color: $white;
+        .field--name-field-text {
+            font-size: 12px;
+            text-align: justify;
+            line-height: 16px;
+            padding-left: 21px;
+            margin-left: -65px;
+            border-left: 2px solid #DCDFCB;
+            padding-right: $gutterXS;
+            padding-bottom: 15px;
+            line-height: 13.1px;
+
+            @include media-breakpoint-down(md) {
+                margin-left: 0;
+                padding-left: 5px;
+            }
+
+            p {
+                text-align: justify;
+            }
+        }
     }
-}
+
+    .block-field-blocknodenewsfield-news__image {
+        display: inline-block;
+        vertical-align: text-top;
+        border-left: 2px solid #DCDFCB;
+        padding-left: 21px;
+        margin-left: -65px;
+        margin-bottom: $gutterS;
+
+        @include media-breakpoint-down(md) {
+            margin-left: 0;
+            padding-left: 5px;
+        }
+
+        img {
+            @include media-breakpoint-down(sm) {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+
+    #edit-submit-all-news {
+        border-radius: 5px;
+        padding: 4px 19px 8px 15px;
+        background-color: $lightblue;
+        border-color: $lightblue;
+
+        &:active {
+            background-color: $blackmarlin;
+            color: $white;
+        }
+    }
 }

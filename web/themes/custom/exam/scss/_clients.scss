@@ -1,20 +1,37 @@
 @import "../scss/variables";
 
 .block-views-blockall-clients-block-1 {
+    &:before {
+        width: 100%;
+        background-color: $moonmist;
+        content: ' ';
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        top: 39px;
+        left: 0;
+        z-index: -1;
+
+        @include media-breakpoint-down(md) {
+            top: 62px;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: -30px;
+    }
+
     h2 {
         line-height: 59px;
-        font-size: 31px;
-        margin: 40px auto;
+        font-size: 30px;
+        margin: -1px auto 60px;
+        width: 163px;
+        background-color: $white;
 
-        &:before,
-        &:after {
-            background-color: $grey;
-            content: ' ';
-            display: inline-block;
-            height: 1px;
-            position: relative;
-            vertical-align: middle;
-            width: 44%;
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+            margin: $gutterS auto $gutterXS;
         }
     }
 
@@ -23,7 +40,7 @@
         margin: 0 auto;
 
         .slick-list {
-            margin-bottom: $gutterXL;
+            margin-bottom: 120px;
         }
     }
 

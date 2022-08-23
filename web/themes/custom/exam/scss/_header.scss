@@ -1,153 +1,229 @@
 @import "../scss/variables";
 
 .header {
-    padding-top: 20px;
+    padding-top: $gutterL;
     background-image: url(../img/header.png);
     background-color: $moonmist;
     background-position: center;
     background-size: cover;
     height: 700px;
 
-    @include media-breakpoint-up(lg) {
-        padding-top: 40px;
-        min-height: 700px;
-    }
-}
-
-#block-exam-main-menu {
-    margin-left: 10px;
-    margin-top: 14px;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-}
-
-.site-branding-block {
-    background-color: $blackmarlin;
-    padding: 25px 32px;
-
-    .site-branding__name {
-        font-size: 32px;
-        color: $blue;
+    @include media-breakpoint-down(md) {
+        padding-top: $gutterS;
+        background-position: inherit;
     }
 
-    .site-branding__slogan {
-        font-size: 14px;
-        color: $grey;
-    }
-}
-
-.region-header {
-    padding: 0;
-    position: relative;
-    background-color: $white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 0 auto;
-    max-width: 1250px;
-
-    .navbar-nav {
-        display: flex;
-        flex-direction: row;
+    #block-exam-main-menu {
+        margin-left: $gutterXS;
+        margin-top: 14px;
         padding: 0;
+        display: inline-flex;
+        align-items: center;
+    }
 
-        li {
-            padding: 0 10px;
-            position: relative;
+    .site-branding-block {
+        background-color: $blackmarlin;
+        padding: 25px 32px;
 
-            &:first-child {
-                content: '';
-                background: url('../img/Homepage-menu.png');
-                background-size: 25px 25px;
-                background-repeat: no-repeat;
-                background-position: center;
-                padding: 0;
-                margin: 0;
+        @include media-breakpoint-down(sm) {
+            padding: 5px;
+            text-align: center;
+        }
+
+        .site-branding__name {
+            font-size: 32px;
+            color: $blue;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 27px;
+            }
+        }
+
+        .site-branding__slogan {
+            font-size: 14px;
+            color: $grey;
+        }
+    }
+
+    #block-exam-main-menu {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
+    .region-header {
+        padding: 0;
+        position: relative;
+        background-color: $white;
+        display: grid;
+        grid-template-columns: 19% 50% 11% 20%;
+        margin: 0 auto;
+        max-width: 1250px;
+
+        @include media-breakpoint-down(xl) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 2fr 1fr 2fr;
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+
+            li {
+                padding: 0 13px;
+                position: relative;
+
+                @include media-breakpoint-down(xl) {
+                    padding: 0 5px;
+                }
+
+                &:first-child {
+                    content: '';
+                    background: url('../img/Homepage-menu.png');
+                    background-size: 25px 25px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    padding: 0;
+                    margin: 0 $gutterXS;
+
+                    @include media-breakpoint-down(xl) {
+                        margin: 0;
+                    }
+
+                    a {
+                        color: transparent;
+
+                        &:hover:after {
+                            display: block;
+                            left: $gutterXS;
+                            right: $gutterXS;
+                            position: absolute;
+                            content: "";
+                            height: 7px;
+                            top: 65px;
+                            width: 40%;
+                            margin: 0 auto;
+                            background-color: #6e9bca;
+
+                            @include media-breakpoint-down(xl) {
+                                top: 76px;
+                            }
+                        }
+                    }
+                }
 
                 a {
-                    color: transparent;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: $blackmarlin;
 
                     &:hover:after {
-                        display: block;
-                        left: 10px;
-                        right: 10px;
+                        left: $gutterXS;
+                        right: $gutterXS;
                         position: absolute;
                         content: "";
                         height: 7px;
                         top: 65px;
-                        width: 40%;
-                        margin: 0 auto;
-                        background-color: #6e9bca;
+                        width: 75%;
+                        margin: 0;
+                        background: $blue;
+
+                        @include media-breakpoint-down(xl) {
+                            top: 76px;
+                        }
                     }
                 }
             }
 
-            a {
-                text-transform: uppercase;
-                text-decoration: none;
-                font-size: 14px;
-                color: $blackmarlin;
-
-                &:hover:after {
-                    left: 10px;
-                    right: 10px;
-                    position: absolute;
-                    content: "";
-                    height: 7px;
-                    top: 65px;
-                    width: 75%;
-                    margin: 0;
-                    background: $blue;
-                }
+            @include media-breakpoint-down(lg) {
+                display: none;
             }
         }
     }
-}
 
-.block-addtoany-block {
-    display: flex;
-    align-items: center;
+    .block-addtoany-block {
+        display: flex;
+        align-items: center;
 
-}
-
-.search-block-form {
-    display: flex;
-    align-items: center;
-
-    fieldset {
-        border: none;
+        @include media-breakpoint-down(sm) {
+            margin: $gutterXS 5px 5px;
+        }
     }
 
-    #edit-keys {
-        padding: 6px 0px 11px 5px;
-        border: 1px #cdcdcd solid;
-    }
+    .search-block-form {
+        display: flex;
+        align-items: center;
+        margin-left: -10px;
 
-    .form-row > fieldset,
-    .form-row > div {
-        padding: 0;
-        flex: 0 1 auto;
-        width: auto;
-        max-width: none;
-        margin: 0;
-    }
-
-    #edit-actions {
-        input {
-            border: 1px #cdcdcd solid;
+        @include media-breakpoint-down(xl) {
+            margin-left: 0;
         }
 
-        #edit-submit {
-            border-radius: 0;
-            background: none;
-            color: transparent;
-            background: url(../img/search.png);
-            background-size: 22px 22px;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 40px;
-            height: 43px;
-            margin-right: 20px;
+        @include media-breakpoint-down(sm) {
+            margin: 5px;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        #edit-keys {
+            padding: 6px 0px 8px 5px;
+            border: 1px #cdcdcd solid;
+            width: 170px;
+        }
+
+        .form-row > fieldset,
+        .form-row > div {
+            padding: 0;
+            flex: 0 1 auto;
+            max-width: none;
+            margin: 0;
+
+            @include media-breakpoint-down(lg) {
+                width: auto;
+            }
+        }
+
+        #edit-actions--2 {
+            input {
+                border: 1px #cdcdcd solid;
+            }
+
+            #edit-submit {
+                border-radius: 0;
+                background: none;
+                color: transparent;
+                background: url(../img/search.png);
+                background-size: 22px 22px;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .block-responsive-menu-toggle {
+        background-color: $blackmarlin;
+
+        @include media-breakpoint-down(sm) {
+            grid-row-start: 2;
+        }
+
+        .responsive-menu-toggle-icon {
+            @include media-breakpoint-down(sm) {
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -155,15 +231,28 @@
 .block-views-blockcreativity-header-block-1 {
     position: absolute;
     margin-top: -405px;
-    width: 66%;
+    width: 64%;
     text-align: center;
+
+    @include media-breakpoint-down(md) {
+        text-align: left;
+        padding-left: $gutterL;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-left: 0;
+    }
 
     .views-row {
         .views-field-title {
             font-size: 65px;
             color: $white;
             line-height: 61px;
-            font-weight: lighter;
+            font-weight: 300;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 50px;
+            }
         }
 
         .views-field-subtitle {
@@ -171,13 +260,39 @@
             line-height: 39px;
             letter-spacing: 1.4px;
             color: $blackmarlin;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 30px;
+                padding-left: 5px;
+            }
         }
 
         .views-field-description-header {
             color: $blue;
-            padding-left: 37%;
+            padding-left: 36%;
             text-align: left;
             font-size: 14px;
+            line-height: 1.2;
+
+            @include media-breakpoint-down(xl) {
+                padding-left: 29%;
+            }
+
+            @include media-breakpoint-down(lg) {
+                padding-left: 25%;
+            }
+
+            @include media-breakpoint-down(md) {
+                padding-left: 5px;
+            }
         }
+    }
+}
+
+.off-canvas-wrapper {
+    display: none;
+
+    @include media-breakpoint-down(lg) {
+        display: block;
     }
 }

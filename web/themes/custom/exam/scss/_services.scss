@@ -1,7 +1,35 @@
 @import "../scss/variables";
 @import "../scss/mixins";
 
-#block-views-block-all-services-block-1 {
+.block-views-blockall-services-block-1 {
+
+    &:before {
+        width: 100%;
+        background-color: $moonmist;
+        content: ' ';
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        top: 45px;
+        left: 0;
+        z-index: -1;
+    }
+
+    h2 {
+        line-height: 68px;
+        font-weight: 600;
+        letter-spacing: 0.01px;
+        font-size: 29px;
+        margin-bottom: 30px;
+        width: 160px;
+        background-color: $white;
+
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+        }
+    }
+
     .view-content {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -16,29 +44,10 @@
     }
 
     .node__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
-    h2 {
-        line-height: 68px;
-        font-weight: 600;
-        letter-spacing: 0.01px;
-        font-size: 29px;
-        margin-bottom: 30px;
 
-        &:before,
-        &:after {
-            background-color: $moonmist;
-            content: ' ';
-            display: inline-block;
-            height: 1px;
-            position: relative;
-            vertical-align: middle;
-            width: 44%;
-        }
-    }
 
     .field--name-field-image {
         margin: 25px 0;
@@ -63,6 +72,7 @@
         @include link_button;
         background-color: $blue;
         line-height: 31px;
-        margin-top: 20px;
+        width: 100px;
+        margin: 30px auto 0;
     }
 }
